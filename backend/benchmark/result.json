@@ -1,0 +1,963 @@
+{
+  "corpus_size": 42,
+  "question_count": 44,
+  "top_k": 4,
+  "strategy": {
+    "old": {
+      "hit_rate_at_1": 0.8864,
+      "hit_rate": 1.0,
+      "mrr": 0.9356,
+      "by_type": {
+        "同义改写": {
+          "hit_rate": 1.0,
+          "n": 15
+        },
+        "关键词": {
+          "hit_rate": 1.0,
+          "n": 29
+        }
+      }
+    },
+    "rrf": {
+      "hit_rate_at_1": 0.9318,
+      "hit_rate": 0.9773,
+      "mrr": 0.9545,
+      "by_type": {
+        "同义改写": {
+          "hit_rate": 0.9333,
+          "n": 15
+        },
+        "关键词": {
+          "hit_rate": 1.0,
+          "n": 29
+        }
+      }
+    }
+  },
+  "details": [
+    {
+      "question": "年休假有几天",
+      "type": "同义改写",
+      "gold": [
+        "hr-01"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "hr-01"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "hr-01",
+        "hr-03",
+        "hr-02",
+        "hr-04"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "工作满十年能休多少天年假",
+      "type": "同义改写",
+      "gold": [
+        "hr-01"
+      ],
+      "old_path": "向量",
+      "old_ids": [
+        "hr-01",
+        "hr-03",
+        "hr-02",
+        "hr-04"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "hr-01",
+        "hr-07",
+        "hr-03",
+        "hr-02"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "请病假需要什么材料",
+      "type": "关键词",
+      "gold": [
+        "hr-02"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "hr-02",
+        "fin-05",
+        "hr-01"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "hr-02",
+        "hr-01",
+        "fin-05",
+        "hr-03"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "病假期间工资怎么算",
+      "type": "关键词",
+      "gold": [
+        "hr-02"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "hr-02",
+        "hr-05",
+        "hr-03",
+        "hr-04"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "hr-02",
+        "hr-03",
+        "hr-05",
+        "hr-04"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "有事请假扣工资吗",
+      "type": "同义改写",
+      "gold": [
+        "hr-03"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "hr-03",
+        "hr-05",
+        "hr-02",
+        "hr-04"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "hr-03",
+        "hr-02",
+        "hr-04",
+        "hr-05"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "周末加班工资是几倍",
+      "type": "关键词",
+      "gold": [
+        "hr-04"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "hr-04",
+        "hr-05",
+        "hr-03",
+        "hr-02"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "hr-04",
+        "hr-03",
+        "hr-02",
+        "hr-05"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "试用期最长多久",
+      "type": "关键词",
+      "gold": [
+        "hr-05"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "hr-05",
+        "hr-06",
+        "hr-07"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "hr-05",
+        "hr-06",
+        "hr-07",
+        "hr-01"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "怎么申请转正",
+      "type": "关键词",
+      "gold": [
+        "hr-06"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "hr-06",
+        "hr-05",
+        "ops-02",
+        "fin-07"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "hr-06",
+        "hr-05",
+        "it-01",
+        "ops-02"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "辞职要提前多久说",
+      "type": "同义改写",
+      "gold": [
+        "hr-07"
+      ],
+      "old_path": "向量",
+      "old_ids": [
+        "hr-07",
+        "hr-03",
+        "hr-01",
+        "hr-06"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "hr-07",
+        "hr-03",
+        "hr-04",
+        "fin-02"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "绩效考核分几档",
+      "type": "关键词",
+      "gold": [
+        "hr-08"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "hr-08"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "hr-08",
+        "cs-03",
+        "hr-09",
+        "it-04"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "年终奖发几个月",
+      "type": "关键词",
+      "gold": [
+        "hr-09"
+      ],
+      "old_path": "向量",
+      "old_ids": [
+        "hr-09",
+        "hr-01",
+        "hr-03",
+        "cs-03"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "hr-09",
+        "hr-01",
+        "hr-03",
+        "cs-03"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "可以和同事讨论工资吗",
+      "type": "同义改写",
+      "gold": [
+        "hr-10"
+      ],
+      "old_path": "向量",
+      "old_ids": [
+        "hr-10",
+        "hr-05",
+        "hr-03",
+        "hr-04"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "hr-05",
+        "hr-03",
+        "hr-04",
+        "hr-02"
+      ],
+      "rrf_hit": false
+    },
+    {
+      "question": "出差住宿能报多少钱",
+      "type": "同义改写",
+      "gold": [
+        "fin-01"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "fin-02",
+        "fin-01"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "fin-01",
+        "fin-02",
+        "fin-07",
+        "fin-04"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "坐飞机出差需要提前申请吗",
+      "type": "关键词",
+      "gold": [
+        "fin-02"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "fin-02",
+        "hr-07",
+        "fin-05",
+        "hr-03"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "fin-02",
+        "hr-07",
+        "hr-03",
+        "fin-05"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "报销需要什么发票",
+      "type": "关键词",
+      "gold": [
+        "fin-03"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "fin-03",
+        "fin-04",
+        "fin-02",
+        "fin-05"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "fin-03",
+        "fin-02",
+        "fin-04",
+        "fin-05"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "费用核销的截止日期",
+      "type": "同义改写",
+      "gold": [
+        "fin-04"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "fin-05",
+        "fin-04"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "fin-04",
+        "fin-05",
+        "hr-07",
+        "hr-05"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "备用金怎么核销",
+      "type": "关键词",
+      "gold": [
+        "fin-05"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "fin-05"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "fin-05",
+        "it-04",
+        "ops-02",
+        "fin-04"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "采购多少钱需要总经理审批",
+      "type": "关键词",
+      "gold": [
+        "fin-06"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "fin-06",
+        "hr-06",
+        "fin-07",
+        "hr-01"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "fin-06",
+        "fin-07",
+        "ops-02",
+        "hr-06"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "请客户吃饭的标准是多少",
+      "type": "同义改写",
+      "gold": [
+        "fin-07"
+      ],
+      "old_path": "向量",
+      "old_ids": [
+        "fin-07",
+        "cs-01",
+        "fin-01",
+        "cs-03"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "fin-07",
+        "fin-01",
+        "cs-01",
+        "cs-03"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "预付款最多付多少比例",
+      "type": "关键词",
+      "gold": [
+        "fin-08"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "fin-08"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "fin-08",
+        "fin-07",
+        "prj-01",
+        "fin-05"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "新员工账号什么时候开通",
+      "type": "关键词",
+      "gold": [
+        "it-01"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "it-01",
+        "safe-04",
+        "hr-06",
+        "it-02"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "it-01",
+        "hr-06",
+        "it-03",
+        "ops-02"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "密码多久要换一次",
+      "type": "关键词",
+      "gold": [
+        "it-02"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "it-02",
+        "it-04",
+        "safe-01"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "it-02",
+        "it-04",
+        "cs-04",
+        "safe-04"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "在家办公怎么连公司内网",
+      "type": "同义改写",
+      "gold": [
+        "it-03"
+      ],
+      "old_path": "向量",
+      "old_ids": [
+        "it-03",
+        "it-05",
+        "ops-02",
+        "it-01"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "it-03",
+        "it-05",
+        "safe-01",
+        "ops-04"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "数据库多久备份一次",
+      "type": "关键词",
+      "gold": [
+        "it-04"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "it-04",
+        "safe-01",
+        "it-02"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "it-04",
+        "it-02",
+        "safe-04",
+        "safe-01"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "办公电脑要装杀毒软件吗",
+      "type": "关键词",
+      "gold": [
+        "it-05"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "it-05",
+        "safe-01",
+        "it-03"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "it-05",
+        "it-03",
+        "safe-01",
+        "safe-03"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "电脑坏了怎么报修",
+      "type": "同义改写",
+      "gold": [
+        "it-06"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "it-05",
+        "safe-03",
+        "it-06"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "it-06",
+        "it-05",
+        "safe-03",
+        "ops-03"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "收到可疑邮件怎么办",
+      "type": "关键词",
+      "gold": [
+        "it-07"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "it-07"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "it-07",
+        "safe-04",
+        "ops-04",
+        "cs-01"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "灭火器多久检查一次",
+      "type": "关键词",
+      "gold": [
+        "safe-01"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "safe-01",
+        "it-04",
+        "it-02"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "safe-01",
+        "it-04",
+        "it-02",
+        "safe-02"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "发生火灾怎么撤离",
+      "type": "同义改写",
+      "gold": [
+        "safe-02"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "safe-02",
+        "fin-04"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "safe-02",
+        "safe-01",
+        "fin-04",
+        "safe-03"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "办公室能用电热水壶吗",
+      "type": "同义改写",
+      "gold": [
+        "safe-03"
+      ],
+      "old_path": "向量",
+      "old_ids": [
+        "safe-03",
+        "ops-02",
+        "safe-01",
+        "ops-01"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "safe-03",
+        "ops-02",
+        "safe-01",
+        "ops-01"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "发现数据泄露怎么上报",
+      "type": "关键词",
+      "gold": [
+        "safe-04"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "safe-04",
+        "safe-03",
+        "safe-02",
+        "cs-01"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "safe-04",
+        "hr-10",
+        "cs-01",
+        "safe-03"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "客户投诉多久要回复",
+      "type": "关键词",
+      "gold": [
+        "cs-01"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "cs-01",
+        "cs-03"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "cs-01",
+        "cs-03",
+        "cs-02",
+        "fin-04"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "紧急工单响应时间",
+      "type": "关键词",
+      "gold": [
+        "cs-02"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "it-06",
+        "cs-02",
+        "cs-01"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "it-06",
+        "cs-02",
+        "cs-01",
+        "safe-02"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "满意度低于多少要回访",
+      "type": "关键词",
+      "gold": [
+        "cs-03"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "cs-03",
+        "prj-05",
+        "hr-05"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "cs-03",
+        "prj-05",
+        "hr-05",
+        "cs-01"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "买的东西能退吗",
+      "type": "同义改写",
+      "gold": [
+        "cs-04"
+      ],
+      "old_path": "向量",
+      "old_ids": [
+        "cs-04",
+        "fin-04",
+        "ops-02",
+        "prj-02"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "cs-04",
+        "fin-04",
+        "ops-02",
+        "prj-02"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "怎么预订会议室",
+      "type": "关键词",
+      "gold": [
+        "ops-01"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "ops-01"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "ops-01",
+        "prj-03",
+        "prj-01",
+        "fin-07"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "办公用品什么时候发",
+      "type": "关键词",
+      "gold": [
+        "ops-02"
+      ],
+      "old_path": "向量",
+      "old_ids": [
+        "ops-02",
+        "ops-04",
+        "prj-04",
+        "safe-01"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "ops-02",
+        "ops-04",
+        "prj-04",
+        "safe-01"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "离职时电脑要还吗",
+      "type": "同义改写",
+      "gold": [
+        "ops-03"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "hr-07",
+        "it-05",
+        "ops-03"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "hr-07",
+        "ops-03",
+        "it-05",
+        "ops-04"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "快递放前台多久要取",
+      "type": "关键词",
+      "gold": [
+        "ops-04"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "ops-04"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "ops-04",
+        "cs-01",
+        "hr-07",
+        "fin-04"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "新项目怎么立项",
+      "type": "关键词",
+      "gold": [
+        "prj-01"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "prj-01",
+        "cs-03",
+        "prj-03",
+        "prj-02"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "prj-01",
+        "prj-03",
+        "cs-03",
+        "prj-02"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "需求变更怎么处理",
+      "type": "关键词",
+      "gold": [
+        "prj-02"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "prj-02",
+        "cs-01",
+        "hr-03",
+        "hr-10"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "prj-02",
+        "cs-01",
+        "hr-03",
+        "fin-03"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "周报什么时候交",
+      "type": "关键词",
+      "gold": [
+        "prj-03"
+      ],
+      "old_path": "向量",
+      "old_ids": [
+        "prj-03",
+        "fin-04",
+        "ops-02",
+        "it-06"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "prj-03",
+        "fin-04",
+        "ops-02",
+        "it-06"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "代码什么时候能上线发布",
+      "type": "同义改写",
+      "gold": [
+        "prj-04"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "prj-04"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "prj-04",
+        "it-01",
+        "it-02",
+        "it-03"
+      ],
+      "rrf_hit": true
+    },
+    {
+      "question": "测试覆盖率要求多少",
+      "type": "关键词",
+      "gold": [
+        "prj-05"
+      ],
+      "old_path": "TF-IDF",
+      "old_ids": [
+        "prj-05",
+        "fin-03"
+      ],
+      "old_hit": true,
+      "rrf_ids": [
+        "prj-05",
+        "cs-03",
+        "fin-03",
+        "prj-04"
+      ],
+      "rrf_hit": true
+    }
+  ]
+}

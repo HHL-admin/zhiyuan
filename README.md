@@ -40,7 +40,16 @@
 score(d) = Σ 1 / (60 + rank_i(d))
 ```
 
-两路分数量纲不同，不能直接加权，RRF 只看排名。相比"按关键词重合度二选一"，同义表述（如"周二 / 星期二"）的召回更完整，见 `backend/tests/test_rrf_retrieval.py`。
+两路分数量纲不同，不能直接加权，RRF 只看排名；相比"按关键词重合度二选一"，不会只走一路而漏掉另一路的结果。
+
+在自建企业制度语料（42 条文档 / 44 个问题）上的对比，详见 [`backend/benchmark`](backend/benchmark/README.md)：
+
+| 方案 | Hit@1 | Hit@4 | MRR |
+|---|---|---|---|
+| 按重合度二选一 | 88.6% | 100.0% | 0.936 |
+| RRF 融合 | **93.2%** | 97.7% | **0.955** |
+
+RRF 让正确答案整体排得更靠前，但有 1 条问题从命中变为未命中（多路同时命中的文档会压过单路第一名），评估文档里记录了原因和改进方向。语料为人工构造，不代表线上真实流量。
 
 ### 4. 其他
 
@@ -78,6 +87,7 @@ backend/
     services/     hierarchical_rbac.py（权限模型）、vectorstore_service.py（混合检索）、rag_service.py ...
     auth/         JWT 与用户库
   tests/          端到端权限测试、RRF 检索测试
+  benchmark/      检索评测语料、问题集与评测脚本
 frontend/
   src/components/ ThreeColumnLayout、UserManagement、ChatInterface、LoginPage、RegisterPage ...
 ```
@@ -104,11 +114,12 @@ npm install
 npm run dev        # http://localhost:5173，后端地址通过 VITE_API_BASE_URL 配置
 ```
 
-**测试**
+**测试与评测**
 
 ```bash
 cd backend
-python tests/test_rrf_retrieval.py                                   # 离线检索对比
+python tests/test_rrf_retrieval.py                                   # 离线检索对比（不依赖服务）
+python benchmark/run_benchmark.py                                    # 44 题检索效果评测，输出 Hit@K / MRR
 BASE_URL=http://127.0.0.1:8000 ADMIN_PASSWORD=<密码> python tests/test_permissions_e2e.py   # 42 项权限与隔离测试
 ```
 

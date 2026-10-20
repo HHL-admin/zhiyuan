@@ -6,6 +6,13 @@
 演示账号（高级用户）：`demo` / `demo123456`
 
 > 问答需要在页面右上角「设置」里填写 OpenAI 兼容的 API Key（如 DeepSeek）；不填 Key 也可以体验上传、文档管理和用户管理。
+>
+> <img width="1280" height="704" alt="Snipaste_2026-10-21_02-47-01" src="https://github.com/user-attachments/assets/31b796d3-811a-47f7-b90c-3e946419d59b" />
+<img width="1280" height="704" alt="Snipaste_2026-10-21_02-47-41" src="https://github.com/user-attachments/assets/00b7ee57-8906-470e-a5b9-5e91c1c7db5c" />
+<img width="1280" height="704" alt="Snipaste_2026-10-21_02-47-27" src="https://github.com/user-attachments/assets/23790876-00bf-41fb-9232-3856abb0e168" />
+
+
+
 
 ## 核心特性
 

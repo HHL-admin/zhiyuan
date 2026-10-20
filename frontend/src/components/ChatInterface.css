@@ -1,0 +1,504 @@
+/* DeepSeek 风格聊天界面 - 深色主题 */
+.deepseek-chat {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+  min-height: 0; /* 重要：允许 flex 子元素缩小 */
+  height: 100%;
+}
+
+/* 消息列表 */
+.deepseek-messages {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 24px;
+  scroll-behavior: smooth;
+  min-height: 0; /* 重要：允许 flex 子元素缩小 */
+  position: relative;
+}
+
+/* 欢迎界面 */
+.deepseek-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.welcome-icon {
+  font-size: 64px;
+  margin-bottom: 24px;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.3));
+}
+
+.deepseek-welcome h3 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 10px rgba(99, 102, 241, 0.3);
+}
+
+.deepseek-welcome p {
+  font-size: 16px;
+  color: #94a3b8;
+  margin-bottom: 48px;
+}
+
+.welcome-tips {
+  display: flex;
+  gap: 32px;
+}
+
+.tip-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 24px;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.tip-icon {
+  font-size: 28px;
+}
+
+.tip-item span:last-child {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.welcome-notice {
+  margin-top: 32px;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 12px;
+  font-size: 14px;
+  color: #a5b4fc;
+  text-align: center;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* 消息项 */
+.deepseek-message {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.deepseek-message.user {
+  flex-direction: row-reverse;
+}
+
+/* 头像 */
+.message-avatar {
+  flex-shrink: 0;
+}
+
+.avatar-user,
+.avatar-bot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.avatar-user {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.avatar-bot {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* AI 头像图片 */
+.avatar-bot-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 消息主体 */
+.message-body {
+  flex: 1;
+  max-width: 800px;
+}
+
+.deepseek-message.user .message-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.deepseek-message.user .message-header {
+  flex-direction: row-reverse;
+}
+
+.message-role-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.message-time {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* 消息内容 */
+.message-content {
+  padding: 16px 20px;
+  border-radius: 12px;
+  line-height: 1.6;
+  font-size: 15px;
+  color: #e2e8f0;
+}
+
+.deepseek-message.user .message-content {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.deepseek-message.assistant .message-content {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-bottom-left-radius: 4px;
+  backdrop-filter: blur(8px);
+}
+
+/* Thinking 动画 */
+.thinking {
+  display: flex;
+  gap: 6px;
+  padding: 8px 0;
+}
+
+.thinking-dot {
+  width: 8px;
+  height: 8px;
+  background: #999;
+  border-radius: 50%;
+  animation: thinking 1.4s ease-in-out infinite;
+}
+
+.thinking-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.thinking-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.thinking-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes thinking {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+/* 参考资料 */
+.message-sources {
+  margin-top: 12px;
+}
+
+.sources-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #94a3b8;
+  transition: all 0.2s;
+  backdrop-filter: blur(8px);
+}
+
+.sources-toggle:hover {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.sources-icon {
+  font-size: 16px;
+}
+
+.sources-arrow {
+  margin-left: auto;
+  font-size: 10px;
+  transition: transform 0.2s;
+}
+
+.sources-arrow.open {
+  transform: rotate(180deg);
+}
+
+.sources-panel {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.source-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.2s;
+  backdrop-filter: blur(8px);
+}
+
+.source-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.source-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.source-filename {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.source-similarity {
+  font-size: 12px;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.2);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.source-card-content {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #94a3b8;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+/* 输入区 */
+.deepseek-input-container {
+  border-top: 1px solid rgba(99, 102, 241, 0.2);
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  padding: 20px 24px;
+  flex-shrink: 0;
+}
+
+.deepseek-input-form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  background: rgba(30, 41, 59, 0.6);
+  border: 2px solid rgba(99, 102, 241, 0.3);
+  border-radius: 12px;
+  padding: 12px 16px;
+  transition: all 0.2s;
+  backdrop-filter: blur(8px);
+}
+
+.input-wrapper:focus-within {
+  border-color: #6366f1;
+  background: rgba(30, 41, 59, 0.8);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.deepseek-textarea {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  resize: none;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #e2e8f0;
+  font-family: inherit;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.deepseek-textarea::placeholder {
+  color: #64748b;
+}
+
+.deepseek-textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.deepseek-send-btn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.deepseek-send-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.5);
+}
+
+.deepseek-send-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.deepseek-send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 滚动条样式 - 深色主题 */
+.deepseek-messages::-webkit-scrollbar,
+.source-card-content::-webkit-scrollbar,
+.deepseek-textarea::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.deepseek-messages::-webkit-scrollbar-track,
+.source-card-content::-webkit-scrollbar-track,
+.deepseek-textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.deepseek-messages::-webkit-scrollbar-thumb,
+.source-card-content::-webkit-scrollbar-thumb,
+.deepseek-textarea::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.4);
+  border-radius: 3px;
+}
+
+.deepseek-messages::-webkit-scrollbar-thumb:hover,
+.source-card-content::-webkit-scrollbar-thumb:hover,
+.deepseek-textarea::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.6);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .deepseek-messages {
+    padding: 16px;
+  }
+
+  .deepseek-input-container {
+    padding: 16px;
+  }
+
+  .welcome-tips {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .tip-item {
+    width: 100%;
+  }
+}

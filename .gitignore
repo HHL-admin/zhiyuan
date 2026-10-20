@@ -1,0 +1,28 @@
+# 密钥与本地配置（只提交 .env.example）
+.env
+.env.*
+!.env.example
+*.local
+
+# 运行数据：数据库、上传的文档、向量库
+backend/data/
+
+# 依赖与构建产物
+node_modules/
+frontend/dist/
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# 日志与临时文件
+*.log
+*.bak*
+*.tgz
+
+# 本地归档和工具配置
+_archive/
+.claude/
+.vscode/
+.idea/
+.DS_Store

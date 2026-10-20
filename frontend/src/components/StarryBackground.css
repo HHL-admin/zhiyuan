@@ -1,0 +1,21 @@
+.starry-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    #020617 0%,
+    #0f172a 30%,
+    #1e293b 100%
+  );
+  overflow: hidden;
+}
+
+.starry-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

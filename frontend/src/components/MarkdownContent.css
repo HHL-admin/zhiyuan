@@ -1,0 +1,173 @@
+/* Markdown 内容渲染样式 - 深色主题 */
+.markdown-content {
+  line-height: 1.75;
+  color: #e2e8f0;
+  word-wrap: break-word;
+}
+
+/* 段落 */
+.markdown-content p {
+  margin: 0 0 1em 0;
+}
+
+.markdown-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* 标题 */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  margin: 1.2em 0 0.6em 0;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.markdown-content h1:first-child,
+.markdown-content h2:first-child,
+.markdown-content h3:first-child {
+  margin-top: 0;
+}
+
+.markdown-content h1 { font-size: 1.5em; }
+.markdown-content h2 { font-size: 1.3em; }
+.markdown-content h3 { font-size: 1.15em; }
+.markdown-content h4 { font-size: 1.05em; }
+
+/* 列表 */
+.markdown-content ul,
+.markdown-content ol {
+  margin: 0.8em 0;
+  padding-left: 1.8em;
+}
+
+.markdown-content li {
+  margin: 0.4em 0;
+}
+
+.markdown-content ul ul,
+.markdown-content ol ol,
+.markdown-content ul ol,
+.markdown-content ol ul {
+  margin: 0.4em 0;
+}
+
+/* 行内代码 */
+.markdown-content code {
+  background: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* 代码块 */
+.markdown-content pre {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 1em 0;
+  overflow-x: auto;
+  backdrop-filter: blur(8px);
+}
+
+.markdown-content pre code {
+  background: transparent;
+  color: #e2e8f0;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.9em;
+  display: block;
+  line-height: 1.6;
+}
+
+/* 引用块 */
+.markdown-content blockquote {
+  margin: 1em 0;
+  padding: 0.8em 1.2em;
+  border-left: 4px solid #6366f1;
+  background: rgba(30, 41, 59, 0.4);
+  color: #cbd5e1;
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+}
+
+.markdown-content blockquote p {
+  margin: 0;
+}
+
+/* 加粗和斜体 */
+.markdown-content strong {
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.markdown-content em {
+  font-style: italic;
+  color: #cbd5e1;
+}
+
+/* 水平线 */
+.markdown-content hr {
+  border: none;
+  border-top: 2px solid rgba(99, 102, 241, 0.2);
+  margin: 1.5em 0;
+}
+
+/* 链接 */
+.markdown-content a {
+  color: #a5b4fc;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.markdown-content a:hover {
+  border-bottom-color: #a5b4fc;
+  color: #c7d2fe;
+}
+
+/* 表格 */
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.markdown-content th,
+.markdown-content td {
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.markdown-content th {
+  background: rgba(99, 102, 241, 0.2);
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.markdown-content td {
+  color: #cbd5e1;
+}
+
+.markdown-content tr:nth-child(even) {
+  background: #fafbfc;
+}
+
+/* 图片 */
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1em 0;
+}

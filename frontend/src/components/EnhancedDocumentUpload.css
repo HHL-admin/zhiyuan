@@ -1,0 +1,190 @@
+.enhanced-upload-zone {
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 32px;
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(8px);
+  border: 2px dashed rgba(99, 102, 241, 0.3);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.enhanced-upload-zone::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.enhanced-upload-zone:hover::before {
+  opacity: 1;
+}
+
+.enhanced-upload-zone:hover {
+  border-color: rgba(99, 102, 241, 0.6);
+  background: rgba(30, 41, 59, 0.6);
+  transform: scale(1.02);
+}
+
+.enhanced-upload-zone.dragging {
+  border-color: #6366f1;
+  background: rgba(99, 102, 241, 0.2);
+  transform: scale(1.05);
+}
+
+.enhanced-upload-zone.dragging::before {
+  opacity: 1;
+}
+
+.enhanced-upload-zone.uploading {
+  pointer-events: none;
+}
+
+/* 上传图标容器 */
+.upload-icon-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-icon-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(99, 102, 241, 0.3);
+  animation: ringPulse 2s ease-in-out infinite;
+}
+
+.upload-icon-ring:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  animation-delay: 0s;
+}
+
+.upload-icon-ring:nth-child(2) {
+  width: 120%;
+  height: 120%;
+  animation-delay: 0.5s;
+}
+
+@keyframes ringPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.2;
+  }
+}
+
+.upload-icon {
+  font-size: 48px;
+  z-index: 1;
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.enhanced-upload-zone.dragging .upload-icon {
+  animation: iconBounce 0.5s ease-in-out;
+}
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.1);
+  }
+}
+
+/* 上传文字 */
+.upload-text {
+  text-align: center;
+  z-index: 1;
+}
+
+.upload-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 8px;
+}
+
+.upload-subtitle {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* 上传进度环 */
+.upload-progress-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+}
+
+.progress-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-circle-bg {
+  fill: none;
+  stroke: rgba(99, 102, 241, 0.2);
+  stroke-width: 4;
+}
+
+.progress-circle {
+  fill: none;
+  stroke: url(#progressGradient);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 251.2;
+  stroke-dashoffset: 0;
+  animation: progressSpin 1.5s linear infinite;
+}
+
+@keyframes progressSpin {
+  0% {
+    stroke-dashoffset: 251.2;
+  }
+  50% {
+    stroke-dashoffset: 62.8;
+  }
+  100% {
+    stroke-dashoffset: 251.2;
+  }
+}
+
+/* 渐变定义 */
+.enhanced-upload-zone svg defs {
+  display: none;
+}
